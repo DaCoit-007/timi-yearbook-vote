@@ -125,6 +125,15 @@
     border: 0.5px solid #DCEEF6;
     white-space: nowrap;
   }
+  /* V22：按角色染卡片底色（仅在没 changed/deferred 高亮时生效） */
+  .card.role-doria:not(.changed):not(.deferred) {
+    background: #FAF8FF;
+    border: 0.5px solid #E2DCF0;
+    border-left: 4px solid #6E7BD8;
+  }
+  .card.role-cloud:not(.changed):not(.deferred) {
+    border-left: 4px solid #19B5E8;
+  }
   .card-copy {
     font-size: 14px; line-height: 1.7; color: #0E3B52;
     margin: 6px 0 14px;
@@ -601,7 +610,7 @@ const TOTAL_STEPS = STEPS.length; // 11（P0+P1+8 组+P6）
 const _tk = ["github", "_pat_", "11B7A5EHQ0J2UZhKF6do1S", "_JIGwk3zRgyQr2VLeDBoc3Sz7Wvg1yMUannVGsXKsgP7", "KIHM63KMVI3oakox"];
 const REPO_OWNER = "DaCoit-007";
 const REPO_NAME = "timi-yearbook-vote";
-const STORAGE_KEY = "timi-vote-v21";
+const STORAGE_KEY = "timi-vote-v22";
 
 /* ============== State ============== */
 const state = {
@@ -845,10 +854,8 @@ function renderDemoPage(key) {
         <div class="demo-content">
           <div class="demo-hero">
             <span class="demo-tag">同学录小结</span>
-            <h1 class="demo-title">合上之前，我在你这本最后一页贴了张标签。</h1>
-            <div class="demo-hero-mini-tag">你的同学类型</div>
-            <div class="demo-hero-mini-main">从最早一起走到现在的「长跑型 TiMi 同学」。</div>
-            <div class="demo-hero-mini-sub">这本同学录我替你收着，什么时候你再回来 —— 告诉我一声，我就接着往下记。</div>
+            <h1 class="demo-title">这里不是最后一页，<br>而是更多同学来留言的开始页。</h1>
+            <p class="demo-sub">这本会一直开着，等他们来写。</p>
           </div>
           <div class="demo-board">
             <div class="demo-board-title">这本上别人留下的几句</div>
@@ -859,6 +866,10 @@ function renderDemoPage(key) {
             <div class="demo-msg">
               <div class="demo-msg-from">朵莉亚的便签：</div>
               <div class="demo-msg-text">你那句"最后一把"，我从来都没信过。</div>
+            </div>
+            <div class="demo-msg" style="background:#F5F0FB;border-left:3px solid #6E7BD8;padding-left:10px;">
+              <div class="demo-msg-from" style="color:#6E7BD8;">小云仔的便签：</div>
+              <div class="demo-msg-text">跟你一起玩了这么久，那些一起开的局、临时起意的车、随手就过去半天的下午，回想起来都很开心。要说我对你的印象的话 —— 你是从最早一起走到现在的「长跑型 TiMi 同学」。</div>
             </div>
           </div>
           ${fbInputHtml}
@@ -887,8 +898,12 @@ function renderGroupPage(groupIdx) {
   cur.cards.forEach(c => {
     const v = state.votes[c.id] || null;
     const fb = state.feedback[c.id] || "";
+    /* V22：根据 speaker 字符串判定角色，给卡片加角色 class */
+    const roleCls = c.speaker.indexOf("朵莉亚") === 0 ? " role-doria"
+                  : c.speaker.indexOf("小云仔") === 0 ? " role-cloud"
+                  : "";
     html += `
-      <article class="card${state.viewed[c.id] ? " viewed" : ""}" data-cid="${escapeHtml(c.id)}">
+      <article class="card${state.viewed[c.id] ? " viewed" : ""}${roleCls}" data-cid="${escapeHtml(c.id)}">
         <div class="card-head">
           <span class="card-id">${escapeHtml(c.id)}</span>
           <span class="card-topic">${escapeHtml(c.topic)}</span>
