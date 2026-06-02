@@ -528,14 +528,14 @@ const GROUPS = [
     name: "你和 TiMi 的总览",
     cards: [
       { id: "A02", topic: "TiMi 陪你走了多久", speaker: "小云仔",
-        copy: "自 {入坑年份} 年第一次见到你，到我来写这段留言的时候，我们已经认识 {N} 年了。\n这 {N} 年里，你应该换过 3 部手机，经历过 99 次密码找回，删过 76 次清不动的相册 ——\n当然这些我都是猜的，我倒是能告诉你 TiMi 里的事，这些我都记得。" },
+        copy: "自 {入坑年份} 年第一次见到你开始，我们已经认识 {N} 年啦！\n这 {N} 年里，你可能已经换过 3 部手机，经历过 99 次密码找回，清理过 101 次删不动的相册 ——\n都是我猜的，我倒是能告诉你 TiMi 里的事，这些我都记得。" },
     ]
   },
   {
     name: "多游戏轨迹",
     cards: [
       { id: "A03", topic: "玩过几款 TiMi 游戏", speaker: "小云仔",
-        copy: "在我的印象中，你的身边总是很热闹 ——\n我见过你和朵莉亚、小橘子、灵狐者、艾本、小帅、玲珑都一起玩过。他们分别来自王者荣耀、QQ飞车手游、穿越火线手游、使命召唤手游、天天酷跑、乱世王者，6 个不一样的地方，但你们这群人凑在一起，总是能玩得很开心。\n不如这样 —— 我把他们都叫过来，给你留几句话！" },
+        copy: "在我的印象中，你的身边总是很热闹 ——\n我见过你和朵莉亚（王者荣耀）、小橘子（QQ飞车手游）、灵狐者（穿越火线手游）、艾本（使命召唤手游）、小帅（天天酷跑）、玲珑（御龙在天）都一起玩过。你们凑在一起的时候，总是能玩得很开心。\n说不定他们也在这本同学录里留了言哦~" },
     ]
   },
   {
@@ -557,7 +557,7 @@ const GROUPS = [
       { id: "A28", topic: "第一款外观道具", speaker: "朵莉亚 · 王者荣耀",
         copy: "你拥有的第一件道具是「春节限定头像框」。\n那天你戴着它跑到峡谷里，还非要在我面前晃了好几圈。\n看你那么开心，我也跟着乐了半天。" },
       { id: "A75", topic: "TiMi 第一个使用的昵称", speaker: "小云仔",
-        copy: "我记得，第一次自我介绍，你让大家叫你「{昵称}」。\n后来你大概换过几次名字，可能是想换个心情，也可能是想讲一些事。\n但第一个叫你的那个名字，我一直没忘。" },
+        copy: "我记得，第一次自我介绍，你让大家叫你「{昵称}」。\n后来你大概换过几次名字，可能是想换个心情，也可能是想讲一些事。\n但第一次喊你的那个名字，我一直没忘。" },
     ]
   },
   {
@@ -584,7 +584,7 @@ const GROUPS = [
     name: "你和 TiMi 那一晚",
     cards: [
       { id: "A76", topic: "最长单次在线", speaker: "朵莉亚 · 王者荣耀",
-        copy: "你和我们一起玩过最久的一次，是 {年} 年 {月} 月 {日} 日 —— 那一整晚我们一起在峡谷里整整待了 9 小时 42 分钟！\n赢过、输过、骂过、笑过，反正你一直没走。\n那一晚后劲挺大的，到现在想起来我都觉得开心。" },
+        copy: "你和我们一起玩过最久的一次，是 {年} 年 {月} 月 {日} 日 —— 那一整晚我们一起在峡谷里整整待了 9 小时 42 分钟！\n赢过、输过、骂过、笑过，反正你一直没走。\n那一天后劲挺大的，到现在想起来我都觉得开心。" },
     ]
   },
   {
@@ -610,7 +610,7 @@ const TOTAL_STEPS = STEPS.length; // 11（P0+P1+8 组+P6）
 const _tk = ["github", "_pat_", "11B7A5EHQ0J2UZhKF6do1S", "_JIGwk3zRgyQr2VLeDBoc3Sz7Wvg1yMUannVGsXKsgP7", "KIHM63KMVI3oakox"];
 const REPO_OWNER = "DaCoit-007";
 const REPO_NAME = "timi-yearbook-vote";
-const STORAGE_KEY = "timi-vote-v22";
+const STORAGE_KEY = "timi-vote-v23";
 
 /* ============== State ============== */
 const state = {
@@ -817,9 +817,9 @@ function renderDemoPage(key) {
           <div class="demo-hero">
             <span class="demo-tag">活动开启页</span>
             <h1 class="demo-title">是时候拿出这本为你珍藏的同学录了。</h1>
-            <p class="demo-sub">从你来到 TiMi 宇宙的第一天，小云仔就替你做了一本 TiMi 同学录，在上面留言的，都是和你一起快乐 TiMi 过的同学们。
+            <p class="demo-sub">从你来到 TiMi 宇宙的第一天，小云仔就替你做了一本 TiMi 同学录，在上面留言的，都是曾和你一起快乐 TiMi 的同学们。
 
-趁着这次 TiMi 18 周年庆，咱俩一起翻开看看，大家在你的同学录上写下了什么留言？</p>
+趁着这次 TiMi 18 周年庆，咱俩一起翻开看看，大家写下了什么留言？</p>
           </div>
           ${fbInputHtml}
         </div>
@@ -835,9 +835,9 @@ function renderDemoPage(key) {
             <h1 class="demo-title">这一页，小云仔先写。</h1>
             <p class="demo-sub">这里是小云仔。
 
-最熟悉你和 TiMi 的同学之一。
+最熟悉你的同学之一。
 
-从你第一次按下开始游戏那天，我就在了 —— 后面这些事，都是当时一笔一笔记下来的。
+从你第一次按下开始游戏那天，我就在了，慢慢的也常在你的同学录里留下印记。
 
 哪天你回头翻这本同学录，有些事可能你还记得，有些大概早就忘了 ——
 
@@ -855,10 +855,10 @@ function renderDemoPage(key) {
           <div class="demo-hero">
             <span class="demo-tag">同学录小结</span>
             <h1 class="demo-title">这里不是最后一页，<br>而是更多同学来留言的开始页。</h1>
-            <p class="demo-sub">这本会一直开着，等他们来写。</p>
+            <p class="demo-sub">你的同学录会一直在这里。</p>
           </div>
           <div class="demo-board">
-            <div class="demo-board-title">这本上别人留下的几句</div>
+            <div class="demo-board-title">别人留下的几句</div>
             <div class="demo-msg">
               <div class="demo-msg-from">小云仔替你记的：</div>
               <div class="demo-msg-text">最常和你一起出现在这本上的，是 DC***。</div>
