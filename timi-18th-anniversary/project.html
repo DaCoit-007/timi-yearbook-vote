@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>天美 18 周年庆 · 线上活动方案</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: #F4FAFD;
+  color: #1A2332;
+  line-height: 1.6;
+  padding: 24px;
+  -webkit-font-smoothing: antialiased;
+}
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #FFFFFF;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0, 144, 199, 0.06);
+}
+
+/* === Header === */
+.hero {
+  background: linear-gradient(135deg, #00B5E2 0%, #0090C7 100%);
+  color: #FFFFFF;
+  padding: 44px 52px;
+}
+.hero-tag {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 2px;
+  background: rgba(255, 255, 255, 0.18);
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+.hero-title {
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+.hero-sub { font-size: 15px; opacity: 0.92; max-width: 740px; }
+.hero-meta {
+  display: flex;
+  gap: 32px;
+  margin-top: 26px;
+  font-size: 13px;
+  flex-wrap: wrap;
+}
+.hero-meta strong { font-weight: 600; font-size: 16px; display: block; }
+.hero-meta span { opacity: 0.85; }
+
+/* === Section === */
+.section {
+  padding: 40px 52px;
+  border-bottom: 1px solid #E8F2F7;
+}
+.section-num {
+  display: inline-block;
+  background: #00B5E2;
+  color: #FFFFFF;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 28px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.section-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #0F2A3D;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+}
+
+/* === 一句话定位 === */
+.pitch {
+  background: #E8F7FC;
+  border-left: 4px solid #00B5E2;
+  border-radius: 10px;
+  padding: 20px 24px;
+  font-size: 15px;
+  color: #0F2A3D;
+  line-height: 1.8;
+}
+.pitch strong { color: #0090C7; }
+
+/* === 入口模块 === */
+.modules {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.mod {
+  border-radius: 12px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+}
+.mod-head { font-size: 11px; font-weight: 600; letter-spacing: 1px; margin-bottom: 8px; opacity: 0.75; }
+.mod-title { font-size: 17px; font-weight: 600; margin-bottom: 12px; }
+.mod-desc { font-size: 13px; line-height: 1.8; color: #4A5C6B; flex-grow: 1; }
+.mod-out {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(0,0,0,0.1);
+  font-size: 12px;
+}
+.mod-out-label { color: #6B8294; }
+.mod-out-val { font-weight: 600; }
+
+.mod-1 { background: #FFF7E6; border: 1px solid #FFD895; }
+.mod-1 .mod-head, .mod-1 .mod-out-val { color: #B8731A; }
+.mod-2 { background: #FCF1F8; border: 1px solid #F2B6D9; }
+.mod-2 .mod-head, .mod-2 .mod-out-val { color: #B0287A; }
+.mod-3 { background: #E8F7FC; border: 1px solid #00B5E2; }
+.mod-3 .mod-head, .mod-3 .mod-out-val { color: #0090C7; }
+
+/* === 分流图 === */
+.flow-wrap { margin-top: 22px; }
+.flow-arrows { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 10px; }
+.flow-arrow { text-align: center; font-size: 13px; font-weight: 600; }
+.flow-arrow.direct { color: #B8731A; }
+.flow-arrow.coupon { color: #0090C7; }
+.flow-arrow.use { color: #B0287A; }
+.flow-results { display: grid; grid-template-columns: 1fr 1.4fr 1fr; gap: 14px; }
+.result-box { border-radius: 12px; padding: 18px; text-align: center; }
+.result-direct { background: #FFF7E6; border: 1px dashed #B8731A; }
+.result-direct .result-title { color: #B8731A; }
+.result-coupon { background: linear-gradient(135deg, #00B5E2 0%, #0090C7 100%); color: #FFFFFF; border: 2px solid #0090C7; }
+.result-coupon .result-title { color: #FFFFFF; font-size: 15px; }
+.result-coupon .result-desc { color: rgba(255,255,255,0.92); }
+.result-use { background: #FCF1F8; border: 1px dashed #B0287A; }
+.result-use .result-title { color: #B0287A; }
+.result-title { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+.result-desc { font-size: 12px; color: #4A5C6B; line-height: 1.6; }
+
+/* === 任务与产出 === */
+.task-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.task-card { border-radius: 12px; padding: 22px; }
+.task-main { background: #E8F7FC; border: 1px solid #00B5E2; }
+.task-bonus { background: #FFF7E6; border: 1px solid #FFD895; }
+.task-card .task-head { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+.task-main .task-head { color: #0090C7; }
+.task-bonus .task-head { color: #B8731A; }
+.task-card .task-tip { font-size: 12px; color: #6B8294; margin-bottom: 14px; }
+.task-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 9px 0; border-bottom: 1px dashed #DCEEF5; font-size: 13px;
+}
+.task-row:last-child { border-bottom: none; }
+.task-row .k { color: #4A5C6B; }
+.task-row .v { font-weight: 600; }
+.task-main .v { color: #0090C7; }
+.task-bonus .v { color: #B8731A; }
+
+/* === 进度示例 === */
+.speed-table {
+  width: 100%; border-collapse: collapse; font-size: 14px;
+  background: #FFFFFF; border-radius: 12px; overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,144,199,0.06);
+}
+.speed-table th, .speed-table td { padding: 14px 18px; text-align: left; border-bottom: 1px solid #E8F2F7; }
+.speed-table thead { background: #00B5E2; color: #FFFFFF; }
+.speed-table th { font-weight: 600; font-size: 13px; }
+.speed-table td .badge { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 12px; font-weight: 600; }
+.badge-fast { background: #FFF0DB; color: #B8731A; }
+.badge-mid { background: #E1F3FB; color: #0090C7; }
+.badge-base { background: #EEF1F4; color: #5F6B76; }
+.speed-table .day { font-weight: 600; color: #0F2A3D; }
+
+/* === 抽奖机制 === */
+.pool { background: #F4FAFD; border: 1px solid #00B5E2; border-radius: 14px; padding: 24px; }
+.pool-title { font-size: 15px; font-weight: 600; color: #0090C7; text-align: center; margin-bottom: 16px; }
+.pool-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 14px; }
+.pool-row-3 { grid-template-columns: repeat(3, 1fr); }
+.pool-cell {
+  background: #FFFFFF; border: 1px solid #B5E5F2; border-radius: 8px;
+  padding: 14px 6px; text-align: center; font-size: 12px; color: #4A5C6B;
+}
+.pool-cell-hit { background: linear-gradient(135deg, #FFB84D 0%, #FF9421 100%); border: 2px solid #FF9421; color: #FFFFFF; font-weight: 600; }
+.pool-cell-num { font-size: 11px; display: block; margin-bottom: 4px; opacity: 0.65; }
+.pool-cell-hit .pool-cell-num { opacity: 0.9; }
+.pool-mech {
+  background: #FFFFFF; border-radius: 8px; padding: 12px 16px;
+  font-size: 13px; color: #4A5C6B; text-align: center; border: 1px dashed #B5E5F2;
+}
+.pool-mech strong { color: #0F2A3D; }
+
+/* === 3类奖励 === */
+.reward-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.reward-card { border-radius: 12px; padding: 22px; border: 1px solid; }
+.reward-1 { background: #FCF1F8; border-color: #F2B6D9; }
+.reward-2 { background: #FFF7E6; border-color: #FFD895; }
+.reward-3 { background: #F4FAFD; border-color: #B5E5F2; }
+.reward-icon { font-size: 24px; margin-bottom: 10px; }
+.reward-name { font-size: 15px; font-weight: 600; margin-bottom: 8px; }
+.reward-desc { font-size: 13px; color: #4A5C6B; line-height: 1.7; }
+.reward-1 .reward-name { color: #B0287A; }
+.reward-2 .reward-name { color: #B8731A; }
+.reward-3 .reward-name { color: #0090C7; }
+.reward-name { display: flex; align-items: center; gap: 8px; }
+.reward-flag { font-size: 11px; font-weight: 600; background: #FF9421; color: #FFFFFF; padding: 1px 8px; border-radius: 10px; }
+
+/* === 申请说明 === */
+.ask-intro {
+  background: #E8F7FC; border-left: 4px solid #00B5E2; border-radius: 10px;
+  padding: 18px 22px; font-size: 14px; color: #0F2A3D; line-height: 1.8; margin-bottom: 20px;
+}
+.ask-intro strong { color: #0090C7; }
+
+.ask-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.ask-card { border-radius: 12px; padding: 20px; border: 1px solid; display: flex; flex-direction: column; }
+.ask-card-new { background: #FCF1F8; border-color: #F2B6D9; }
+.ask-card-revive { background: #FFF7E6; border-color: #FFD895; }
+.ask-card-welfare { background: #F4FAFD; border-color: #B5E5F2; }
+.ask-card-top { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; }
+.ask-card-icon { font-size: 24px; line-height: 1; }
+.ask-card-name { font-size: 15px; font-weight: 600; color: #0F2A3D; }
+.ask-card-flag { font-size: 11px; font-weight: 600; margin-top: 4px; display: inline-block; padding: 1px 8px; border-radius: 10px; }
+.flag-new { background: #B0287A; color: #FFFFFF; }
+.flag-revive { background: #FF9421; color: #FFFFFF; }
+.flag-welfare { background: #B5C9D4; color: #FFFFFF; }
+.ask-card-what { font-size: 12px; color: #4A5C6B; line-height: 1.7; margin-bottom: 14px; flex-grow: 1; }
+.ask-card-need { border-top: 1px dashed rgba(0,0,0,0.12); padding-top: 12px; }
+.need-label { font-size: 11px; font-weight: 600; color: #6B8294; margin-bottom: 6px; }
+.ask-list { list-style: none; padding: 0; margin: 0; }
+.ask-list li { font-size: 12px; color: #4A5C6B; padding: 5px 0 5px 16px; position: relative; line-height: 1.6; }
+.ask-list li::before { content: "·"; position: absolute; left: 3px; color: #00B5E2; font-weight: 700; }
+.ask-list li strong { color: #0F2A3D; }
+
+.ask-timeline {
+  margin-top: 18px; background: #FFF7E6; border-left: 3px solid #B8731A; border-radius: 8px;
+  padding: 14px 18px; font-size: 13px; color: #4A5C6B; line-height: 1.7;
+}
+.ask-timeline strong { color: #B8731A; }
+
+/* === 游戏 === */
+.games-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
+.game-card {
+  background: #F4FAFD; border: 1px solid #B5E5F2; border-radius: 8px;
+  padding: 14px 10px; text-align: center; font-size: 12px; color: #0F2A3D;
+}
+.game-card::before { content: "🎮"; display: block; font-size: 18px; margin-bottom: 4px; opacity: 0.5; }
+.games-note { margin-top: 16px; font-size: 13px; color: #6B8294; text-align: center; }
+
+/* === Footer === */
+.footer {
+  background: #0F2A3D; color: #FFFFFF; padding: 24px 52px; font-size: 12px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.footer-left { opacity: 0.75; }
+.footer-right { opacity: 0.6; font-size: 11px; }
+
+/* === Responsive === */
+@media (max-width: 900px) {
+  body { padding: 12px; }
+  .section { padding: 28px 22px; }
+  .hero { padding: 28px 22px; }
+  .hero-title { font-size: 23px; }
+  .modules, .task-grid, .reward-grid { grid-template-columns: 1fr; }
+  .flow-arrows, .flow-results { grid-template-columns: 1fr; }
+  .ask-cards { grid-template-columns: 1fr; }
+  .games-grid { grid-template-columns: repeat(3, 1fr); }
+  .footer { flex-direction: column; gap: 8px; align-items: flex-start; }
+}
+@media (max-width: 600px) {
+  body { padding: 8px; }
+  .games-grid { grid-template-columns: repeat(2, 1fr); }
+  .pool-row, .pool-row-3 { grid-template-columns: repeat(2, 1fr); }
+  .hero-title { font-size: 20px; }
+  .section-title { font-size: 18px; }
+  .speed-table { font-size: 12px; }
+  .speed-table th, .speed-table td { padding: 10px 10px; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">TiMi 18TH ANNIVERSARY</div>
+  <div class="hero-title">天美 18 周年庆 · 线上活动</div>
+  <div class="hero-sub">三大独立活动，由扭蛋券串联 · 项目沟通版</div>
+  <div class="hero-meta">
+    <div><strong>12.03 — 12.11（预估）</strong><span>在线期约 9 天</span></div>
+    <div><strong>3 类道具</strong><span>新道具 / 复刻 / 福利</span></div>
+    <div><strong>统一货币</strong><span>扭蛋券</span></div>
+  </div>
+</div>
+
+<!-- SECTION 1 · 活动定位 -->
+<div class="section">
+  <div class="section-title"><span class="section-num">1</span>活动定位</div>
+  <div class="pitch">
+    天美 18 周年庆推出 <strong>三个独立活动</strong>：<strong>① 分游戏签到</strong>、<strong>② TiMi 同学录</strong>、<strong>③ TiMi 复刻扭蛋机</strong>。<br>
+    三者由 <strong>扭蛋券</strong> 串联：① ② 产券 → 玩家用券在 ③ 扭出复刻情怀道具。
+  </div>
+</div>
+
+<!-- SECTION 2 · 三大入口 -->
+<div class="section">
+  <div class="section-title"><span class="section-num">2</span>三大独立活动</div>
+  <div class="modules">
+    <div class="mod mod-1">
+      <div class="mod-head">活动 ①</div>
+      <div class="mod-title">分游戏签到</div>
+      <div class="mod-desc">每款游戏独立签到<br>限定道具 + 常规福利<br>同时产出扭蛋券</div>
+      <div class="mod-out"><span class="mod-out-label">产出：</span><span class="mod-out-val">限定道具 + 扭蛋券</span></div>
+    </div>
+    <div class="mod mod-2">
+      <div class="mod-head">活动 ②</div>
+      <div class="mod-title">TiMi 同学录</div>
+      <div class="mod-desc">填写分享「同学卡」<br>重温老友、唤起回忆</div>
+      <div class="mod-out"><span class="mod-out-label">产出：</span><span class="mod-out-val">扭蛋券</span></div>
+    </div>
+    <div class="mod mod-3">
+      <div class="mod-head">活动 ③</div>
+      <div class="mod-title">TiMi 复刻扭蛋机</div>
+      <div class="mod-desc">用券扭奖<br>每 3 抽必出复刻道具</div>
+      <div class="mod-out"><span class="mod-out-label">核心：</span><span class="mod-out-val">扭出复刻情怀道具</span></div>
+    </div>
+  </div>
+
+  <div class="flow-wrap">
+    <div class="flow-arrows">
+      <div class="flow-arrow direct">↓ 发到邮箱</div>
+      <div class="flow-arrow coupon">↓ 产出扭蛋券</div>
+      <div class="flow-arrow use">↓ 消耗扭蛋券</div>
+    </div>
+    <div class="flow-results">
+      <div class="result-box result-direct">
+        <div class="result-title">直接发奖</div>
+        <div class="result-desc">限定道具 + 常规福利<br>（活动① 签到）</div>
+      </div>
+      <div class="result-box result-coupon">
+        <div class="result-title">扭蛋券钱包</div>
+        <div class="result-desc">活动① + ② 产出<br>统一货币</div>
+      </div>
+      <div class="result-box result-use">
+        <div class="result-title">投入扭蛋机</div>
+        <div class="result-desc">活动③ 扭奖<br>3 抽必出复刻</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 3 · 扭蛋机制 -->
+<div class="section">
+  <div class="section-title"><span class="section-num">3</span>扭蛋机制</div>
+  <div class="pool">
+    <div class="pool-title">每 3 抽 · 必出 1 件复刻情怀道具</div>
+    <div class="pool-row pool-row-3">
+      <div class="pool-cell"><span class="pool-cell-num">第 1 抽</span>常规福利</div>
+      <div class="pool-cell"><span class="pool-cell-num">第 2 抽</span>常规福利</div>
+      <div class="pool-cell pool-cell-hit"><span class="pool-cell-num">第 3 抽</span>必出复刻 🎁</div>
+    </div>
+    <div class="pool-mech">
+      玩家锚定心仪复刻道具，<strong>每 3 抽必出</strong>。抽中后<strong>弹窗提醒玩家手动选下一个目标</strong>，循环扭取。
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 4 · 怎么攒券 -->
+<div class="section">
+  <div class="section-title"><span class="section-num">4</span>怎么攒扭蛋券</div>
+  <div class="task-grid">
+    <div class="task-card task-main">
+      <div class="task-head">主任务（人人可做）</div>
+      <div class="task-tip">登录游戏 + 玩同学录</div>
+      <div class="task-row"><span class="k">游戏登录签到</span><span class="v">+1 张 / 天</span></div>
+      <div class="task-row"><span class="k">同学录·分享</span><span class="v">+1 张（仅一次）</span></div>
+    </div>
+    <div class="task-card task-bonus">
+      <div class="task-head">加速奖励（多游戏玩家）</div>
+      <div class="task-tip">登得多 · 扭得快，不强求</div>
+      <div class="task-row"><span class="k">登录其他天美游戏</span><span class="v">每款 +1 张</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 5 · 项目侧道具支持申请 -->
+<div class="section">
+  <div class="section-title"><span class="section-num">5</span>需各游戏项目侧支持的道具礼包</div>
+  <div class="ask-intro">
+    主福利承载 <strong>「唤醒玩家情怀」</strong>。希望各游戏在周年庆期间（预计 12 月）<strong>提供以下三类道具支持</strong>。
+  </div>
+
+  <div class="ask-cards">
+    <div class="ask-card ask-card-new">
+      <div class="ask-card-top">
+        <div class="ask-card-icon">🎀</div>
+        <div>
+          <div class="ask-card-name">① 18 周年新道具</div>
+          <div class="ask-card-flag flag-new">新道具开发</div>
+        </div>
+      </div>
+      <div class="ask-card-what">18 周年专属新外观 / 头像框 / 称号等，需重新设计开发。</div>
+      <div class="ask-card-need">
+        <div class="need-label">需项目侧配合</div>
+        <ul class="ask-list">
+          <li>项目侧设计 + 开发</li>
+          <li>品牌侧提供素材与 VI</li>
+          <li><strong>共同确认开发时间线</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ask-card ask-card-revive">
+      <div class="ask-card-top">
+        <div class="ask-card-icon">🕰️</div>
+        <div>
+          <div class="ask-card-name">② 复刻情怀道具</div>
+          <div class="ask-card-flag flag-revive">情怀道具复刻</div>
+        </div>
+      </div>
+      <div class="ask-card-what">经典复刻道具（外观 / 限时语音 / 老道具等），扭蛋机核心大奖。</div>
+      <div class="ask-card-need">
+        <div class="need-label">需项目侧配合</div>
+        <ul class="ask-list">
+          <li>项目侧<strong>挑选能激发情怀、可赠送</strong>的复刻道具</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ask-card ask-card-welfare">
+      <div class="ask-card-top">
+        <div class="ask-card-icon">🎁</div>
+        <div>
+          <div class="ask-card-name">③ 活动福利道具</div>
+          <div class="ask-card-flag flag-welfare">常规支持</div>
+        </div>
+      </div>
+      <div class="ask-card-what">轻量活跃型小福利（如游戏内常规消耗道具）。</div>
+      <div class="ask-card-need">
+        <div class="need-label">需项目侧配合</div>
+        <ul class="ask-list">
+          <li>正常走<strong>申请流程</strong>即可</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="ask-timeline">
+    ⏱️ <strong>需尽早共同对齐</strong>：开发时长 · 上线窗口 · 素材交付 DDL
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-left">天美 18 周年庆 · 线上活动方案 · 在线期 12.03 — 12.11（预估）</div>
+  <div class="footer-right">项目沟通版</div>
+</div>
+
+</div>
+</body>
+</html>
